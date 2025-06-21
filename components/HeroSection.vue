@@ -32,16 +32,20 @@ defineProps({
         <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl leading-relaxed" v-html="subtitle"></p>
 
         <div class="flex flex-col sm:flex-row gap-4 items-center">
-          <button
-            class="bg-[#00ff88] hover:bg-[#00dd77] text-black font-bold text-lg px-8 py-4 rounded-lg shadow-lg shadow-[#00ff88]/25 flex !items-center"
-          >
-            <Play class="w-5 h-5 mr-2" />
-            {{ ctaPrimary.text }}
-          </button>
-          <button class="text-[#00ff88] hover:text-[#00dd77] font-semibold text-lg underline underline-offset-4 transition-colors flex !items-center">
-            {{ ctaSecondary.text }}
-            <ArrowRight class="w-4 h-4 inline ml-1" />
-          </button>
+          <a href="https://wa.me/5515998557961?text=quero%20vender%2024%20horas%20por%20dia" target="_blank" rel="noopener noreferrer">
+            <button
+              class="bg-[#00ff88] hover:bg-[#00dd77] text-black font-bold text-lg px-8 py-4 rounded-lg shadow-lg shadow-[#00ff88]/25 flex !items-center"
+            >
+              <Play class="w-5 h-5 mr-2" />
+              {{ ctaPrimary.text }}
+            </button>
+          </a>
+          <a href="https://wa.me/5515998557961?text=quero%20vender%2024%20horas%20por%20dia" target="_blank" rel="noopener noreferrer">
+            <button class="text-[#00ff88] hover:text-[#00dd77] font-semibold text-lg underline underline-offset-4 transition-colors flex !items-center">
+              {{ ctaSecondary.text }}
+              <ArrowRight class="w-4 h-4 inline ml-1" />
+            </button>
+          </a>
         </div>
 
         <p class="text-sm text-[#00ff88] mt-6" v-html="footerText"></p>

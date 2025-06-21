@@ -19,7 +19,9 @@ defineProps({
             {{ link.text }}
           </a>
         </nav>
-        <button class="bg-[#00ff88] hover:bg-[#00dd77] text-black font-semibold py-2 px-4 rounded">Ver Demonstração</button>
+        <a href="https://wa.me/5515998557961?text=quero%20vender%2024%20horas%20por%20dia" target="_blank" rel="noopener noreferrer">
+          <button class="bg-[#00ff88] hover:bg-[#00dd77] text-black font-semibold py-2 px-4 rounded">Ver Demonstração</button>
+        </a>
       </div>
     </div>
   </header>

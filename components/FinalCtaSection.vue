@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
+import { defineProps, ref, computed } from 'vue'
 import { Calendar, CheckCircle } from 'lucide-vue-next'
 
 defineProps({
@@ -23,6 +23,16 @@ defineProps({
   },
   privacyText: { type: String, default: '' }
 })
+
+const name = ref('')
+const email = ref('')
+const phone = ref('')
+
+const whatsappUrl = computed(() => {
+  const base = 'https://wa.me/5515998557961'
+  const message = `Olá! Tenho interesse e gostaria de mais informações. Meu nome é ${name.value}, e-mail: ${email.value}, telefone: ${phone.value}.`
+  return `${base}?text=${encodeURIComponent(message)}`
+})
 </script>
 
 <template>
@@ -41,24 +51,26 @@ defineProps({
         <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto" v-html="subtitle"></p>
 
         <div class="bg-gray-900/80 border border-[#00ff88]/30 backdrop-blur-sm max-w-2xl mx-auto p-8 rounded-lg">
-          <form class="space-y-6">
+          <div class="space-y-6">
             <div class="grid md:grid-cols-2 gap-4">
               <div>
-                <input :placeholder="form.placeholders.name" class="bg-gray-800 border-gray-600 text-white placeholder-gray-400 h-12 focus:border-[#00ff88] w-full px-4 rounded-lg" />
+                <input v-model="name" :placeholder="form.placeholders.name" class="bg-gray-800 border-gray-600 text-white placeholder-gray-400 h-12 focus:border-[#00ff88] w-full px-4 rounded-lg" />
               </div>
               <div>
-                <input type="email" :placeholder="form.placeholders.email" class="bg-gray-800 border-gray-600 text-white placeholder-gray-400 h-12 focus:border-[#00ff88] w-full px-4 rounded-lg" />
+                <input v-model="email" type="email" :placeholder="form.placeholders.email" class="bg-gray-800 border-gray-600 text-white placeholder-gray-400 h-12 focus:border-[#00ff88] w-full px-4 rounded-lg" />
               </div>
             </div>
             <div>
-              <input :placeholder="form.placeholders.phone" class="bg-gray-800 border-gray-600 text-white placeholder-gray-400 h-12 focus:border-[#00ff88] w-full px-4 rounded-lg" />
+              <input v-model="phone" :placeholder="form.placeholders.phone" class="bg-gray-800 border-gray-600 text-white placeholder-gray-400 h-12 focus:border-[#00ff88] w-full px-4 rounded-lg" />
             </div>
-            <button type="submit" class="w-full bg-[#00ff88] hover:bg-[#00dd77] text-black font-bold text-lg py-4 rounded-lg shadow-lg shadow-[#00ff88]/25 flex items-center justify-center">
-              <Calendar class="w-5 h-5 mr-2" />
-              {{ form.buttonText }}
-            </button>
-            <p class="text-sm text-gray-400 text-center">{{ form.note }}</p>
-          </form>
+            <a :href="whatsappUrl" target="_blank" rel="noopener noreferrer">
+              <button type="button" class="w-full bg-[#00ff88] hover:bg-[#00dd77] text-black font-bold text-lg py-4 rounded-lg shadow-lg shadow-[#00ff88]/25 flex items-center justify-center">
+                <Calendar class="w-5 h-5 mr-2" />
+                {{ form.buttonText }}
+              </button>
+            </a>
+            <p class="text-sm text-gray-400 text-center mt-6">{{ form.note }}</p>
+          </div>
 
           <div class="flex items-center justify-center mt-6 space-x-6 text-sm text-gray-400">
             <div v-for="benefit in form.benefits" :key="benefit" class="flex items-center">

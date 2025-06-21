@@ -27,13 +27,17 @@ defineProps({
           </div>
 
           <div class="flex flex-col sm:flex-row gap-4">
-            <button class="bg-[#00ff88] hover:bg-[#00dd77] text-black font-bold text-lg px-8 py-4 rounded-lg flex items-center">
-              <Calendar class="w-5 h-5 mr-2" />
-              {{ ctaPrimary.text }}
-            </button>
-            <button class="border border-[#00ff88] text-[#00ff88] hover:bg-[#00ff88]/10 font-semibold px-8 py-4 rounded-lg">
-              {{ ctaSecondary.text }}
-            </button>
+            <a href="https://wa.me/5515998557961?text=quero%20vender%2024%20horas%20por%20dia" target="_blank" rel="noopener noreferrer">
+              <button class="bg-[#00ff88] hover:bg-[#00dd77] text-black font-bold text-lg px-8 py-4 rounded-lg flex items-center">
+                <Calendar class="w-5 h-5 mr-2" />
+                {{ ctaPrimary.text }}
+              </button>
+            </a>
+            <a href="https://wa.me/5515998557961?text=quero%20vender%2024%20horas%20por%20dia" target="_blank" rel="noopener noreferrer">
+              <button class="border border-[#00ff88] text-[#00ff88] hover:bg-[#00ff88]/10 font-semibold px-8 py-4 rounded-lg">
+                {{ ctaSecondary.text }}
+              </button>
+            </a>
           </div>
         </div>
 
