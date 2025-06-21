@@ -12,7 +12,7 @@ defineProps({
     <div class="container mx-auto px-4 py-4">
       <div class="flex justify-between items-center">
         <div class="flex items-center space-x-3">
-          <img :src="logoUrl" alt="XYZ Soluciona" class="h-20" />
+          <img :src="logoUrl" alt="XYZ Soluciona" class="h-10 lg:h-20" />
         </div>
         <nav class="hidden md:flex space-x-8">
           <a v-for="link in navLinks" :key="link.text" :href="link.href" class="text-gray-300 hover:text-[#00ff88] transition-colors">
